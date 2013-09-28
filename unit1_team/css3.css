@@ -1,0 +1,47 @@
+body, footer{
+	background-color:#00FF00;
+	text-align: center;
+}
+
+#background{
+	margin: auto;
+	width: 700px;
+	height: 800px;
+	border-radius: 25px; 
+	box-shadow: 5px 5px 5px #606060;
+	background-color:#000000;
+}
+
+#screen{
+	float: left;
+	width: 350px; 
+	height: 700px;
+	margin-left: 50px;
+	margin-top: 50px;
+	border-radius: 5px; 
+	background-color:#000000; 
+}
+
+#next{
+	float: right;
+	width: 200px; 
+	height: 200px;
+	margin-right: 50px;
+	margin-top: 50px;
+	border-radius: 5px; 
+	background-color: #F0F0F0; 
+}
+
+#content{
+	text-align: center;
+}
+
+#controls{
+	margin-top: 30px;
+}
+
+#newGame{
+	margin-top: 20px;
+	width: 100px;
+	height: 40px;
+}
