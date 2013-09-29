@@ -1,7 +1,18 @@
-body, footer{
+body {
 	background: url('images/background.jpg') center top repeat-x;
 	font-family: Verdana, sans-serif;
+}
+
+header {
+	font-family: Georgia, monospace;
 	text-align: center;
+	font-size: 50px;
+	text-shadow: 2px 2px 5px #FFFFFF;
+}
+
+footer {
+	text-align: center;
+	font-size: 16px;
 }
 
 #background{
