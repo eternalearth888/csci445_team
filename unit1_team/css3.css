@@ -1,5 +1,5 @@
 body {
-	background: url('images/background.jpg') center top repeat;
+	background: url('images/left.png') left top no-repeat, url('images/right.png') right top no-repeat, url('images/background.jpg') center top repeat-x;
 	font-family: Verdana, sans-serif;
 }
 
