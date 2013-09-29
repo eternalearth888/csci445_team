@@ -5,7 +5,7 @@ var direction = 0;
 var x = 0;
 var y = 0;
 var colors = ["green", "orange", "yellow", "red", "blue", "cyan", "purple"];
-var count = 4;
+var count = 0;
 
 //T 
 var T = [[2,[0, -1, -1, -1],[0, 0, 1, -1]],[2,[0, -1, -1, -2],[0, -1, 0, 0]],
@@ -92,7 +92,7 @@ var leftL = [[[-1,0,1],[1,1,2]], [[0,1],[2,0]],
 var sidesL = [[0, 1, -1, 1],[-1, 1, 0, 1],[-1, 0, -1, 1],[-1, 1, -1, 0]];
 
 
-var KEY = { LEFT: 37, UP: 38, RIGHT: 39 };
+var KEY = { LEFT: 37, UP: 38, RIGHT: 39, SPACE: 32 };
 
 window.onload = function(){
 
@@ -117,14 +117,20 @@ window.onload = function(){
 }
 
 function beginGame() {
+	var available = false;
 	var i=2;
 	y=5;
 	var interval = setInterval(function () {
+		//alert(i);
 		x = i;
-		drawPiece(L); 
-		i++; 
-		undrawPiece(uL);
-		if (i > 17) clearInterval(interval);}, 500);
+		available = checkDraw(L);
+		if (available == true) {
+			drawPiece(L);
+			i++; 
+			undrawPiece(uL);
+		} else { i=2; }	
+		if (i >= 17) i=2;}, 300);
+		//clearInterval(interval);
 }
 
 function newGame() {
@@ -133,6 +139,26 @@ function newGame() {
 
 function getID(row, col) {
 	return col + (row * numCols);
+}
+
+function checkDraw(piece) {
+	if (x >= piece[direction][0]) {
+		for (i=0;i<piece[direction][1].length;i++) {
+				var row = x + 2 + piece[direction][1][i];
+				var col = y + piece[direction][2][i];
+				var i = getID(row, col);
+				var c = document.getElementById("id"+i.toString());
+				//alert("id"+i.toString());
+				var ctx = c.getContext('2d');
+				//alert(ctx.getImageData(20,20,size,size).data[0]);
+				if (ctx.getImageData(0,0,size,size).data[0] != 255) {
+					//alert("in if");
+					return false;
+				}
+		}
+	}
+	return true;
+
 }
 
 function draw(row, col) {
@@ -207,6 +233,8 @@ function keydown(ev) {
 		movePieceRight(sidesL, rightL, L);
 	} else if (ev.keyCode == KEY.LEFT) {
 		movePieceLeft(sidesL, leftL, L);
+	} else if (ev.keyCode == KEY.SPACE) {
+		alert("Game is Paused");
 	}
 }
 
