@@ -1,5 +1,6 @@
 body, footer{
-	background-color:#00FF00;
+	background: url('images/background.jpg') center top repeat-x;
+	font-family: Verdana, sans-serif;
 	text-align: center;
 }
 
