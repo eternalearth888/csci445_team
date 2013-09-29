@@ -4,8 +4,15 @@ body {
 	font-family: Verdana, sans-serif;
 }
 
+/** Custom Font, MoonStar **/
+@font-face
+{
+	font-family: moonFont;
+	src: url(font/Moonstar.ttf);
+}
+
 header {
-	font-family: Georgia, monospace;
+	font-family: moonFont;
 	text-align: center;
 	font-size: 50px;
 	text-shadow: 2px 2px 5px #FFFFFF;
