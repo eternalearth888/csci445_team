@@ -17,7 +17,7 @@
 			<div id="next"></div>
 			<div id="controls"><button id="newGame">New Game</button></div>
 			<div onclick="rotateYDIV()" id="moon" class="rotateY">
-				<!--<canvas id="outCanvas" id="inCanvas" width="175px" height="175px" style="border: 1px solid white"></canvas>
+				<!--- <canvas id="outCanvas" id="inCanvas" width="175px" height="175px" style="border: 1px solid white"></canvas>
 				<script>
 				  //MyCanvas
 				  var canvas = document.getElementById('outCanvas');
@@ -59,8 +59,8 @@
 				  //fill color
 				  context2.fillStyle='black';
 				  context2.fill();
-				</script>
-		-->
+				</script> -->
+		<img src="blocks/moon.png" />
 			</div>
 		</aside>
 	</div>

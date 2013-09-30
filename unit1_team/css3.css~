@@ -73,7 +73,7 @@ footer {
 	text-align:center;
 	margin: auto;
 }
-/** ROTATE DAMMIT!
+
 .rotateY {
 	pointer-events: none;
 	-moz-transform: none;
@@ -81,4 +81,4 @@ footer {
 	-moz-transform-style: preserve-3d;
  	-moz-transition: all 0.5s ease-in-out;
 	-moz-transform: rotateY(180deg);
-}**/
+}
