@@ -138,15 +138,17 @@ function beginGame() {
 	generateRandom();
 	setCurrentPiece(pieces[count]);
 	var available = true;
+	//var availableRight = true;
 	var i=2;
 	y=5;
 	var interval = setInterval(function () {
 		//alert(i);
 		x = i;
 		available = checkDraw(currentPiece[0]);
+		//availableRight = checkDraw(currentPiece[3]);
 		//alert("Available: " + available);
 		//alert(i + " " + currentPiece[5][direction][3]);
-		if (available == true) {
+		if (available == true && availableRight == true) {
 			drawPiece(currentPiece[0]);
 			i++; 
 			undrawPiece(currentPiece[1]);
@@ -205,6 +207,7 @@ function setOccupied(piece) {
 }
 
 function checkDraw(piece) {
+	//Up Down Checking
 	for (i=0;i<4;i++) {
 		var id = getID(x + piece[direction][1][i], y + piece[direction][2][i]);
 		var c = document.getElementById("id"+id.toString());
@@ -214,6 +217,17 @@ function checkDraw(piece) {
 			return false;
 			//alert("RETURNNNNNNNNNNNN");
 		}
+	}
+
+	//Right Checking?
+	//for (i=0;i<4;i++) {
+	//	var id = getID(x + piece[direction][0][i], y + piece[direction][1][i]);
+	//	var c = document.getElementById("id"+id.toString());
+	//	var occupied = c.getAttribute('occupied');
+	//	alert(i + " " + occupied);
+	//	if (occupied == "true") {
+	//		return false;
+	//	}
 	}
 	return true;
 }
