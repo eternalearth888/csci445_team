@@ -1,10 +1,41 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>Tetris</title>
+<title>Moon Tetris</title>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <link rel="stylesheet" href="css3.css" type="text/css">
 <script type="text/javascript" src="html5.js"></script>
+<script>
+var y, ny=0, rotYINT;
+
+function rotateYDIV(){
+	y=document.getElementById("rotatey1");
+	clearInterval(rotYINT);
+	rotYINT=setInterval("startYRotate()", 10);
+}
+function startYRotate(){
+	ny=ny+1;
+	y.style.transform="rotateY(" + ny + "deg)";
+	y.style.webkitTransform="rotateY(" + ny + "deg)";
+	y.style.OTransform="rotateY(" + ny + "deg)";
+	y.style.MozTransform="rotateY(" + ny + "deg)";
+	if (ny == 180 || ny == 360){
+		clearInterval(rotYINT);
+		if (ny==360) {
+			ny=0;
+		}
+	}
+}
+</script>
+<style>
+#rotatey1{
+	margin: 10px;
+}
+.moon {
+	text-align: center;
+	position: relative;
+}
+</style>
 </head>
 <body>
 <div id="content">
@@ -16,6 +47,51 @@
 		<aside>
 			<div id="next"></div>
 			<div id="controls"><button id="newGame">New Game</button></div>
+			<div onclick="rotateYDIV()" id="rotatey1" class="moon">
+				<canvas id="outCanvas" id="inCanvas" width="175px" height="175px" style="border: 1px solid white"></canvas>
+				<script>
+				  //MyCanvas
+				  var canvas = document.getElementById('outCanvas');
+				  var context = canvas.getContext('2d');
+				  var x = canvas.width / 2;
+				  var y = canvas.height / 2;
+				  var radius = 75;
+				  var startAngle = 4 * Math.PI;
+				  var endAngle =  2 * Math.PI;
+				  var counterClockwise = false;
+
+				  context.beginPath();
+				  context.arc(x, y, radius, startAngle, endAngle, counterClockwise);
+				  context.lineWidth = 10;
+
+				  // line color
+				  context.strokeStyle = 'yellow';
+				  context.stroke();
+				  context.fillStyle='yellow';
+				  context.fill();
+				  
+				  //InCanvas
+				  var canvas2 = document.getElementById('outCanvas');
+				  var context2 = canvas.getContext('2d');
+				  var x2 = canvas.width / 2;
+				  var y2 = canvas.height / 3; 
+				  var radius2 = 50;
+				  var startAngle2 = 4 * Math.PI;
+				  var endAngle2 =  2 * Math.PI;
+				  var counterClockwise2 = false;
+
+				  context.beginPath();
+				  context2.arc(x2, y2, radius2, startAngle2, endAngle2, counterClockwise2);
+				  context2.lineWidth = 10;
+				  // line color
+				  context2.strokeStyle = 'black';
+				  context2.stroke();
+				  
+				  //fill color
+				  context2.fillStyle='black';
+				  context2.fill();
+				</script>
+			</div>
 		</aside>
 	</div>
 </div>
