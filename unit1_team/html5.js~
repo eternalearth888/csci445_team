@@ -123,14 +123,14 @@ function beginGame() {
 	var interval = setInterval(function () {
 		//alert(i);
 		x = i;
-		available = checkDraw(T);
+		available = checkDraw(L);
 		//alert("Available: " + available);
 		if (available == true) {
-			drawPiece(T);
+			drawPiece(L);
 			i++; 
-			undrawPiece(uT);
+			undrawPiece(uL);
 		} else { x--; setOccupied(T); i=2; }	
-		if (i + sidesT[direction][3] > 17) {setOccupied(T); i=2;}}, 300);
+		if (i + sidesL[direction][3] > 17) {setOccupied(L); i=2;}}, 300);
 		//clearInterval(interval);
 }
 
@@ -231,11 +231,11 @@ function rotatePiece(Rpiece, piece) {
 
 function keydown(ev) {
 	if (ev.keyCode == KEY.UP) {
-		rotatePiece(rT, T);
+		rotatePiece(rL, L);
 	} else if (ev.keyCode == KEY.RIGHT) {
-		movePieceRight(sidesT, rightT, T);
+		movePieceRight(sidesL, rightL, L);
 	} else if (ev.keyCode == KEY.LEFT) {
-		movePieceLeft(sidesT, leftT, T);
+		movePieceLeft(sidesL, leftL, L);
 	} else if (ev.keyCode == KEY.SPACE) {
 		alert("Game is Paused");
 	}
