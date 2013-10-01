@@ -31,8 +31,7 @@ footer {
 	border-radius: 2em;
 }
 
-section,aside {
-	margin-top: .5em;
+section, aside {
 	padding: 1em;
 }
 
@@ -55,8 +54,8 @@ aside {
 }
 
 #next {
-	width: 200px;
-	height: 200px;
+	width: 100px;
+	height: 100px;
 	margin: auto;
 	border-radius: 1em;
 	background-color: #FFFFFF;
@@ -68,15 +67,27 @@ aside {
 }
 
 #newGame {
-	width: 200px;
-	margin: auto;
+	width: 100px;
+	margin-left: 3.5em;
 }
 
 
 p.score {
 	color: #FFFFFF;
-	font-size: 36px;
+	font-size: 30px;
 	text-align: center;
+}
+
+p.rules, p.tips {
+	color: #FFFFFF;
+	font-size: 20px;
+	text-align: center;
+}
+
+ul {
+	color: #FFFFFF;
+	font-size:14px;
+	
 }
 
 /**
