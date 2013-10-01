@@ -18,6 +18,7 @@ searching was able to fix this issue!
 -Having tetriminos overlap other pieces
 -Clearing a line and then having board shift downwards
 -Getting left and right background images to not collide if browser windown decreased
+-Preventing default action of up and down keys AKA scrolling (Zoom out if needed!)
 
 
 How to Play MOON TETRIS:
@@ -26,8 +27,9 @@ How to Play MOON TETRIS:
 	- Right and Left arrows move the piece accordingly
 	- You are on the Moon, so board does not shift once line is cleared
 Tips for playing MOON TETRIS:
-	- If you move a piece too quickly, phantom pieces will appear, and you must remember which pieces are phantom and which aren't</li>
-	- At any point in time, some pieces may disappear - will you be the lucky one?</li>
+	- If you move a piece too quickly, phantom pieces will appear, and you must remember which pieces are phantom and which aren't
+	- At any point in time, some pieces may disappear - will you be the lucky one?
+	- Zoom Out if the screen has a scroll bar!
 
 Note: Getting 5 lines cleared is a EXCELLENT score! 
 
