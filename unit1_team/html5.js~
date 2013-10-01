@@ -179,7 +179,8 @@ function newGame() {
 }
 
 function lineCount() {
-	document.getElementById("lines").innerHTML = lines;	
+	var countLine = document.getElementById("lines");
+	countLine.value = lines;	
 }
 
 function setCurrentPiece(piece) {
