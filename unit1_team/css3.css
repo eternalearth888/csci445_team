@@ -32,10 +32,12 @@ footer {
 }
 
 section,aside {
+	margin-top: .5em;
 	padding: 1em;
 }
 
 section {
+	margin-left: 1em;
 	float: left;
 	width: 350px;
 }
@@ -46,8 +48,9 @@ section {
 }
 
 aside {
+	margin-right: 1em;
 	float: right;
-	width: 280px;
+	width: 250px;
 	float: right;
 }
 
