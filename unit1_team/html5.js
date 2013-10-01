@@ -339,6 +339,7 @@ function checkRotate(piece, sides) {
 	if (x == 17 && sides[tempDir][3] != 0) {
 		return false;
 	}
+
 	return true;
 }
 

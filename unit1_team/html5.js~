@@ -179,8 +179,7 @@ function newGame() {
 }
 
 function lineCount() {
-	var countLine = document.getElementById("lines");
-	countLine.value = lines;	
+	document.getElementById("lines").innerHTML = lines;	
 }
 
 function setCurrentPiece(piece) {
@@ -274,6 +273,7 @@ function checkDraw(piece) {
 	return true;
 }
 
+<<<<<<< HEAD
 function checkRight(piece) {
 	for (i=0;i<4;i++) {
 		//alert(i);
@@ -340,6 +340,7 @@ function checkRotate(piece, sides) {
 	if (x == 17 && sides[tempDir][3] != 0) {
 		return false;
 	}
+
 	return true;
 }
 
