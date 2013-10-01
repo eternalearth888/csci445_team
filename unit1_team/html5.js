@@ -6,6 +6,8 @@ var x = 0;
 var y = 0;
 var colors = ["blocks/jupiter.png", "blocks/venus.png", "blocks/moon.png", 
 		"blocks/mars.png", "blocks/mercury.png", "blocks/neptune.png", "blocks/saturn.png"];
+var nextImage = ["nextImage/jupiter.png", "nextImage/venus.png", "nextImage/moon.png", 
+		"nextImage/mars.png", "nextImage/mercury.png", "nextImage/neptune.png", "nextImage/saturn.png"];
 var pieces = ["T", "S", "O", "I", "J", "L", "Z"]
 var count = 6;
 var next = 1;
@@ -188,13 +190,13 @@ function initialSetup() {
 	//alert("Got Randoms: " + count + " " + next);
 	var c = document.createElement("canvas");
 	c.setAttribute('id','nextPiece');
-	c.setAttribute('width',size);
-	c.setAttribute('height',size);
+	c.setAttribute('width',100);
+	c.setAttribute('height',100);
 	c.className = 'nextPiece';
 	document.getElementById("next").appendChild(c);
 	var ctx=c.getContext('2d');
 	var image = new Image();
-	image.src = colors[count];
+	image.src = nextImage[count];
 	ctx.drawImage(image, 0, 0);
 	//alert("drew canvas");
 }
@@ -211,7 +213,7 @@ function loadNext() {
 	var c = document.getElementById("nextPiece");
 	var ctx = c.getContext('2d');
 	var image = new Image();
-	image.src = colors[next];
+	image.src = nextImage[next];
 	ctx.drawImage(image, 0, 0);
 }
 

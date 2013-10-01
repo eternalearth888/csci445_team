@@ -15,7 +15,7 @@ header {
 	font-family: moonFont;
 	font-size: 60px;
 	text-align: center;
-	color: rgba(54,25,25,1.0);
+	color: rgba(54,25,25,1 .0);
 	text-shadow: 2px 2px 5px #788A47;
 }
 
@@ -31,11 +31,14 @@ footer {
 	border-radius: 2em;
 }
 
+section, aside {
+	padding: 1em;
+}
+
 section {
 	margin-left: 1em;
 	float: left;
 	width: 350px;
-	padding: 1em;
 }
 
 #screen{
@@ -48,7 +51,6 @@ aside {
 	float: right;
 	width: 250px;
 	float: right;
-	padding:1em;
 }
 
 #next {
