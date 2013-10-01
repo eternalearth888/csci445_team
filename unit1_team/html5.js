@@ -228,7 +228,7 @@ function checkDraw(piece) {
 	//	if (occupied == "true") {
 	//		return false;
 	//	}
-	}
+//	}
 	return true;
 }
 

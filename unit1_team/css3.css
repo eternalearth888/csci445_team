@@ -1,9 +1,7 @@
 body {
-	overflow: hidden;
 	background: url('images/left.png') left top no-repeat, url('images/right.png') right top no-repeat, url('images/background.jpg') center top repeat-x;
 	background-color: #C8FC3C;
 	font-family: Verdana, sans-serif;
-	padding: 0px;
 }
 
 /** Custom Font, MoonStar **/
@@ -14,6 +12,7 @@ body {
 }
 
 header {
+	color: #000000;
 	font-family: moonFont;
 	font-size: 60px;
 	text-align: center;
@@ -21,6 +20,7 @@ header {
 }
 
 footer {
+	color: #000000;
 	font-size: 16px;
 	text-align: center;
 }
@@ -36,44 +36,40 @@ footer {
 }
 
 #screen{
+	padding-left: 2em;
+	padding-top: 2em;
 	float: left;
 	width: 350px; 
 	height: 700px;
-	margin-left: 50px;
-	margin-top: 50px;
 	border-radius: 5px; 
-	background-color:#000000; 
+}
+
+aside {
+	padding: 2em;
 }
 
 #next{
 	float: right;
 	width: 200px;
 	height: 200px;
-	margin-right: 50px;
-	margin-top: 50px;
 	border-radius: 5px; 
 	background-color: #F0F0F0; 
 }
 
-#content{
-	margin: auto;
-}
-
-
 #controls{
 	text-align: center;
-	margin-top: 30px;
 }
 
 #newGame{
-	margin-top: 20px;
+	margin-top: 1em;
+	margin-left: 3em;
+	margin-bottom: 1em;
 	width: 100px;
 	height: 40px;
 }
 
 #moon {
 	text-align:center;
-	margin: auto;
 }
 /** ROTATE DAMMIT!
 .rotateY {
