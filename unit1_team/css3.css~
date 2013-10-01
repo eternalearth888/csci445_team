@@ -2,6 +2,8 @@ body {
 	background: url('images/left.png') left top no-repeat, url('images/right.png') right top no-repeat, url('images/background.jpg') center top repeat-x;
 	background-color: #C8FC3C;
 	font-family: Verdana, sans-serif;
+	color:white;
+	font-size: 16px;	
 }
 
 /** Custom Font, MoonStar **/
@@ -29,15 +31,15 @@ footer {
 	margin: auto;
 	min-width: 600px;
 	max-width:700px;
-	height: 750px;
+	height: 725px;
 	border-radius: 25px; 
 	box-shadow: 5px 5px 5px #788A47;
 	background-color:#000000;
 }
 
 #screen{
-	padding-left: 3em;
-	padding-top: 2em;
+	padding-left: 2em;
+	padding-top: 1.5em;
 	float: left;
 	width: 350px; 
 	height: 700px;
@@ -45,8 +47,8 @@ footer {
 }
 
 aside {
-	padding-right: 3em;
-	padding-top: 2em;
+	padding-right: 2em;
+	padding-top: 1.5em;
 }
 
 #next{

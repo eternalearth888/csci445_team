@@ -170,7 +170,7 @@ function beginGame() {
 			i=2;
 			y=5;
 			direction = 0;}
-		}, 300);
+		}, 150);
 		//clearInterval(interval);
 }
 
