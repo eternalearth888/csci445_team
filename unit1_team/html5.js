@@ -141,6 +141,12 @@ window.onload = function(){
 	//beginGame();
 	document.addEventListener('keydown', keydown, false);
 
+	window.addEventLIstener("keydown", function(e) {
+		if ([32, 37, 38, 39, 40].indexOf(e.keyCode) > -1) {
+			e.preventDefault();
+		}
+	}, false);
+
 	document.getElementById("newGame").onclick = newGame;
 }
 
