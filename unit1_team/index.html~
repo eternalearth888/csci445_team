@@ -1,8 +1,8 @@
-<!DOCTYPE html>
+<!DOCTYPE HTML>
 <html>
 <head>
 <title>Moon Tetris</title>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta charset="utf-8">
 <link rel="stylesheet" href="css3.css" type="text/css">
 <script type="text/javascript" src="html5.js"></script>
 </head>
@@ -22,21 +22,19 @@
 				<button id="newGame">New Game</button>
 			</div>
 			<div id="score">
-				<p class="score">Lines: <spand id="lines">0</span></p>
-				<p class="rules">How to Play: 
+				<p class="score">Lines: <span id="lines">0</span></p>
+				<p class="rules">How to Play:</p>
 				<ul>
 					<li>Press Space to start game</li>
 					<li>Up arrow rotates the piece</li>
 					<li>Right and Left arrows move the piece accordingly</li>
 					<li>You are on the Moon, so board does not shift once line is cleared</li>
 				</ul>
-				</p>
-				<p class="tips">Tips:
+				<p class="tips">Tips:</p>
 				<ul>				
 					<li>If you move a piece too quickly, phantom pieces will appear, and you must remember which pieces are phantom and which aren't</li>
 					<li>At any point in time, some pieces may disappear - will you be the lucky one?</li>
 				</ul>					
-				</p>
 			</div>
 		</aside>
 	</div>
@@ -45,50 +43,3 @@
 	</footer>
 </body>
 </html>
-<!--
-	<div onclick="rotateYDIV()" id="moon" class="rotateY">
-		<canvas id="outCanvas" id="inCanvas" width="175px" height="175px" style="border: 1px solid white"></canvas>
-		<script>
-		  //MyCanvas
-		  var canvas = document.getElementById('outCanvas');
-		  var context = canvas.getContext('2d');
-		  var x = canvas.width / 2;
-		  var y = canvas.height / 2;
-		  var radius = 75;
-		  var startAngle = 4 * Math.PI;
-		  var endAngle =  2 * Math.PI;
-		  var counterClockwise = false;
-
-		  context.beginPath();
-		  context.arc(x, y, radius, startAngle, endAngle, counterClockwise);
-		  context.lineWidth = 10;
-
-		  // line color
-		  context.strokeStyle = 'yellow';
-		  context.stroke();
-		  context.fillStyle='yellow';
-		  context.fill();
-		  
-		  //InCanvas
-		  var canvas2 = document.getElementById('outCanvas');
-		  var context2 = canvas.getContext('2d');
-		  var x2 = canvas.width / 2;
-		  var y2 = canvas.height / 3; 
-		  var radius2 = 50;
-		  var startAngle2 = 4 * Math.PI;
-		  var endAngle2 =  2 * Math.PI;
-		  var counterClockwise2 = false;
-
-		  context.beginPath();
-		  context2.arc(x2, y2, radius2, startAngle2, endAngle2, counterClockwise2);
-		  context2.lineWidth = 10;
-		  // line color
-		  context2.strokeStyle = 'black';
-		  context2.stroke();
-		  
-		  //fill color
-		  context2.fillStyle='black';
-		  context2.fill();
-		</script>
-	</div>
--->
