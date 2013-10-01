@@ -15,7 +15,7 @@ header {
 	font-family: moonFont;
 	font-size: 70px;
 	text-align: center;
-	text-shadow: 2px 2px 5px #FFFFFF;
+	text-shadow: 2px 2px 5px #788A47;
 }
 
 footer {
@@ -29,7 +29,7 @@ footer {
 	max-width:700px;
 	height: 800px;
 	border-radius: 25px; 
-	box-shadow: 5px 5px 5px #606060;
+	box-shadow: 5px 5px 5px #788A47;
 	background-color:#000000;
 }
 
