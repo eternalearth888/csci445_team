@@ -273,6 +273,7 @@ function checkDraw(piece) {
 	return true;
 }
 
+<<<<<<< HEAD
 function checkRight(piece) {
 	for (i=0;i<4;i++) {
 		//alert(i);
