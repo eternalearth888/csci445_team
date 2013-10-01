@@ -136,7 +136,6 @@ window.onload = function(){
 	
 		ctx.fillRect(0,0,size-3,size);
 	}
-	active = false;
 	initialSetup();
 	//beginGame();
 	document.addEventListener('keydown', keydown, false);
