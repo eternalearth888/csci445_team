@@ -8,7 +8,10 @@ var colors = ["blocks/jupiter.png", "blocks/venus.png", "blocks/moon.png",
 		"blocks/mars.png", "blocks/mercury.png", "blocks/neptune.png", "blocks/saturn.png"];
 var pieces = ["T", "S", "O", "I", "J", "L", "Z"]
 var count = 6;
+var next = 1;
 var lines = 0;
+
+var availableCount = 0;
 
 //T 
 var dT = [[2,[0, -1, -1, -1],[0, 0, 1, -1]],[2,[0, -1, -1, -2],[0, -1, 0, 0]],
@@ -114,6 +117,7 @@ var KEY = { LEFT: 37, UP: 38, RIGHT: 39, SPACE: 32 };
 
 window.onload = function(){
 
+
 	for(i=0;i<180;i++){
 		var c = document.createElement("canvas");
 		c.setAttribute('id','id'+(i+1));
@@ -125,18 +129,17 @@ window.onload = function(){
 
 		var ctx=c.getContext('2d');
 		ctx.fillStyle='#FFFFFF';
-		
+	
 		ctx.fillRect(0,0,size-3,size);
 	}
-
-	beginGame();
+	initialSetup();
+	//beginGame();
 	document.addEventListener('keydown', keydown, false);
 
 	document.getElementById("newGame").onclick = newGame;
 }
 
 function beginGame() {
-	generateRandom();
 	setCurrentPiece(pieces[count]);
 	var available = true;
 	//var availableRight = true;
@@ -149,15 +152,19 @@ function beginGame() {
 		//availableRight = checkDraw(currentPiece[3]);
 		//alert("Available: " + available);
 		//alert(i + " " + currentPiece[5][direction][3]);
+		loadNext();
 		if (available == true) {
+			availableCount = 0;
 			drawPiece(currentPiece[0]);
 			i++; 
 			undrawPiece(currentPiece[1]);
 		} else { 
+			availableCount++;
 			x--;
 			setOccupied(currentPiece[0]);
 			checkRowComplete();
-			generateRandom(); 
+			count = next;
+			next = generateRandom();
 			setCurrentPiece(pieces[count]);
 			i=2;
 			y=5;
@@ -165,21 +172,47 @@ function beginGame() {
 		if (i + currentPiece[5][direction][3] > 17) {
 			setOccupied(currentPiece[0]); 
 			checkRowComplete();
-			generateRandom(); 
+			count = next;			
+			next = generateRandom(); 
 			setCurrentPiece(pieces[count]);
 			i=2;
 			y=5;
 			direction = 0;}
+		if (availableCount >= 2) {clearInterval(interval);}
 		}, 150);
-		//clearInterval(interval);
+}
+
+function initialSetup() {
+	count = generateRandom();
+	next = generateRandom();
+	//alert("Got Randoms: " + count + " " + next);
+	var c = document.createElement("canvas");
+	c.setAttribute('id','nextPiece');
+	c.setAttribute('width',size);
+	c.setAttribute('height',size);
+	c.className = 'nextPiece';
+	document.getElementById("next").appendChild(c);
+	var ctx=c.getContext('2d');
+	var image = new Image();
+	image.src = colors[count];
+	ctx.drawImage(image, 0, 0);
+	//alert("drew canvas");
 }
 
 function newGame() {
-
+	location.reload();
 }
 
 function lineCount() {
 	document.getElementById("lines").innerHTML = lines;	
+}
+
+function loadNext() { 
+	var c = document.getElementById("nextPiece");
+	var ctx = c.getContext('2d');
+	var image = new Image();
+	image.src = colors[next];
+	ctx.drawImage(image, 0, 0);
 }
 
 function setCurrentPiece(piece) {
@@ -202,7 +235,7 @@ function setCurrentPiece(piece) {
 }
 
 function generateRandom() {
-	count =Math.floor(Math.random()*7);
+	return Math.floor(Math.random()*7);
 }
 
 function checkRowComplete() {
@@ -350,8 +383,6 @@ function draw(row, col) {
 	var image = new Image();
 	image.src = colors[count];
 	ctx.drawImage(image, 0, 0);
-	//ctx.fillStyle=colors[count];
-	//ctx.fillRect(0,0,size-3,size);
 }
 
 function undraw(row, col) {
@@ -361,6 +392,7 @@ function undraw(row, col) {
 	ctx.clearRect(0, 0, size, size);
 	ctx.fillStyle='#FFFFFF';
 	ctx.fillRect(0,0,size-3,size);
+	c.setAttribute('occupied', false);
 }
 
 function undrawPiece(piece) {
@@ -426,7 +458,7 @@ function keydown(ev) {
 			movePieceLeft(currentPiece[5], currentPiece[4], currentPiece[0]);
 		}
 	} else if (ev.keyCode == KEY.SPACE) {
-		alert("Game is Paused");
+		beginGame();
 	}
 }
 
