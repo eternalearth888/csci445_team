@@ -37,7 +37,7 @@ footer {
 
 #screen{
 	padding-left: 3em;
-	padding-top: 1em;
+	padding-top: 2em;
 	float: left;
 	width: 350px; 
 	height: 700px;
@@ -46,7 +46,7 @@ footer {
 
 aside {
 	padding-right: 3em;
-	padding-top: 1em;
+	padding-top: 2em;
 }
 
 #next{
