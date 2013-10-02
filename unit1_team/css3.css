@@ -26,13 +26,15 @@ footer {
 #tetris {
 	margin: auto;
 	width: 700px;
-	height: 725px;
+	min-height: 700px;
+	height: 80%;
 	background: rgba(54,25,25,.85);
 	border-radius: 2em;
 }
 
 section, aside {
-	padding: 1em;
+	border: 1px solid white;
+	padding: .5em;
 }
 
 section {
